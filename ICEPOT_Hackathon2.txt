@@ -23,12 +23,18 @@ Instructions :
  
 
 - (V) Requirements (User story / BRD / Requirements) 
+     a. User will share the jira url and api token , agent should be able to fetch description, acceptance criteria, and success criteria from epic, story and portoflio epic and provide as context to the LLM.
 - (V) UI Specs + Flows (Figma / ..) 
+     a. User will share the URL, Figma, and api token for authentication, agent should be able to parse the figma relevant to the user story, epic of the jira and provide as context to the LLM.
 - (V) Recordings (Story grooming session) 
 - (V) Existing test assets (Jira / Test rail / Excel / ADO / ..) 
+      a. The agent should read the existing test cases from RAG based on the keyword search and semantic search  and provide as input to the context to the test case genrator agent.
 - (PV) Development Code Repo (GitHub / Bitbucket) 
+     a. user will share the url of the github as context to the agent , agent should use this as context to test case generator agent.
 - (V) Technical documentation (Wiki / Confluence / Swagger API / ...) 
+     a. user will share the url of the Confluence, swagger api , agent should be able to fetch the details from the Confluence or swagger, depending on the user story description, acceptance criteria, and success criteria and provide as context to the agent. 
 - (V) Defect database (Jira (UAT or lower) / ADO / ServiceNow (P1/P2.. Prod defects) ) 
+     a. The agent should be able to read the existing defects from the RAG based on the keyword search and semantic search  and provide as input to the context to the test case genrator agent.
 - (V) Release notes & Documentations (incl Test Strategy) 
 
 - Use the following output needs to generate the tests 
