@@ -23,34 +23,43 @@ Instructions :
  
 
 - (V) Requirements (User story / BRD / Requirements) 
-     a. User will share the jira url and api token , agent should be able to fetch description, acceptance criteria, and success criteria from epic, story and portoflio epic and provide as context to the LLM.
+     a. User will share the jira url for epic , story and api token , agent should be able to fetch description, acceptance criteria, and success criteria from the epic, story, and portfolio epic and provide as context to the test case generator agent.
 - (V) UI Specs + Flows (Figma / ..) 
-     a. User will share the URL, Figma, and api token for authentication, agent should be able to parse the figma relevant to the user story, epic of the jira and provide as context to the LLM.
-- (V) Recordings (Story grooming session) 
+     a. User will share the URL, Figma, and api token for authentication. The agent should be able to parse the Figma relevant to the user story, epic of the Jira, and provide it as context to the test case generator agent.
 - (V) Existing test assets (Jira / Test rail / Excel / ADO / ..) 
-      a. The agent should read the existing test cases from RAG based on the keyword search and semantic search  and provide as input to the context to the test case genrator agent.
+      a. The agent should read the existing test cases from RAG based on the keyword search and semantic search  and provide them as input to the context of the test case generator agent.
 - (PV) Development Code Repo (GitHub / Bitbucket) 
-     a. user will share the url of the github as context to the agent , agent should use this as context to test case generator agent.
+     a. The user will share the URL of GitHub as context to the agent; the agent should use this as context to test the case generator agent.
 - (V) Technical documentation (Wiki / Confluence / Swagger API / ...) 
-     a. user will share the url of the Confluence, swagger api , agent should be able to fetch the details from the Confluence or swagger, depending on the user story description, acceptance criteria, and success criteria and provide as context to the agent. 
+     a. The user will share the url of the Confluence, swagger api, along with the authentication token. The agent should be able to fetch the details from the Confluence or Swagger, depending on the user story description, acceptance criteria, and success criteria, and provide them as context to the test case generator agent. 
 - (V) Defect database (Jira (UAT or lower) / ADO / ServiceNow (P1/P2.. Prod defects) ) 
-     a. The agent should be able to read the existing defects from the RAG based on the keyword search and semantic search  and provide as input to the context to the test case genrator agent.
-- (V) Release notes & Documentations (incl Test Strategy) 
+     a. The agent should be able to read the existing defects from the RAG based on the keyword search and semantic search,  and provide as input to the context to the test case generator agent based on the jira user story , epic description.
+- (V) Documentations (incl Test Strategy) 
+     a. The agent should be able to read the existing documentation from the RAG based on the keyword search and semantic search, and provide it as input to the context to the test case generator agent based on the jira user story , epic descriptoin.
 
 - Use the following output needs to generate the tests 
 - New Testcases (specific type, format, confidence score) 
-- Existing tests (that needs modification or those are affected)
-- Use these information to design technical design document to feed into copilot as agent with clearly designed phases as prompt (.md) 
-- Before you do that, lets socialise all these inputs to validate with me by asking one question at a time (so that i can confirm the design for approval or rejection); I need only one question at a time and not multiple at a time with multiple choices on. 
+- Existing tests (that needs modification or are affected)
+
+Note: 
+a. Before generating the front-end of the Test case generator agent, I want to test the integration of Jira, Figma, GitHub repo, Confluence, Swagger, Defect database, and document as backend at api level. 
+b. After the backend integration testing is succesfully tested , then only proceed with frontend development of the test case generator agent.
+
+Note : create env file where User will  share the url , authentication token of the Jira, TestRail, Figma, LLM, GitHub, Vector DB , confluence .
+
+
+
+- Use this information to design a technical design document to feed into copilot as agent with clearly designed phases as prompt (.md) 
+- Before you do that, let's socialise all these inputs to validate with me by asking one question at a time (so that i can confirm the design for approval or rejection); I need only one question at a time and not multiple at a time with multiple choices on. 
 - If I do not know the answer, I will let you know so that you can choose the best option based on the context 
 - [CRITICAL] Do not hallucinate and provide only the best responses based on the data available 
-- [IMPORTANT] Ask 20 questions one by one with multiple choice 
+- [IMPORTANT] Ask max of 25 questions one by one with multiple choice till the plan is mature enough to be implemented by the GitHub Co-Pilot agent.
 
-Context : You are the chief product / AI agentic architect for testcase generator and you are expected to guide me in designing the application based on the given instructions. 
+Context: You are the chief product / AI agentic architect for the testcase generator and you are expected to guide me in designing the application based on the given instructions. 
 
-Persona : Act as AI agentic architect with testing as major domain 
+Persona: Act as AI agentic architect with Quality assurnace background  with testing as major domain .
 
-Output format: Start with questionnaire and at end of questionnaire - expecting .md with complete technical architecture 
+Output format: Start with questionnaire and at end of questionnaire - expecting architecture.md with complete technical architecture , api details , front end technical stack, backend technical stack and LLM integration.
 
 Tone 
 Formal and professional
